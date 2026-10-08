@@ -26,8 +26,10 @@ import { PaymentReceiptStep } from './features/payments/PaymentReceiptStep'
 import { MobileLayout } from './layouts/mobile/MobileLayout'
 import { MobileDashboard } from './pages/mobile/MobileDashboard'
 import { MobileLogin } from './pages/mobile/MobileLogin'
+import { MobileQRScanner } from './pages/mobile/MobileQRScanner'
 import { MobilePayments } from './pages/mobile/MobilePayments'
 import { MobileTransfers } from './pages/mobile/MobileTransfers'
+import { MobileLoans } from './pages/mobile/MobileLoans'
 
 import './App.css'
 
@@ -45,9 +47,10 @@ function App() {
             <Route index element={<Navigate to="login" replace />} />
             <Route path="login" element={<MobileLogin />} />
             <Route path="inicio" element={<MobileDashboard />} />
+            <Route path="qr" element={<MobileQRScanner />} />
             <Route path="pagos/*" element={<MobilePayments />} />
             <Route path="transferencias/*" element={<MobileTransfers />} />
-            <Route path="prestamos" element={<div className="p-6 text-center text-gray-500 mt-20">Próximamente</div>} />
+            <Route path="prestamos" element={<MobileLoans />} />
           </Route>
 
           <Route element={<AppLayout />}>

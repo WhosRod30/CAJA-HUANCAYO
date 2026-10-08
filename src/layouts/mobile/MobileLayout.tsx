@@ -1,8 +1,9 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
+import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/Icon';
 import { useEffect } from 'react';
 
 export function MobileLayout() {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const isLogin = pathname === '/mobile/login';
 
@@ -48,7 +49,7 @@ export function MobileLayout() {
 
             {/* Botón flotante central (Acción principal) */}
             <div className="relative -top-8">
-              <button className="w-16 h-16 bg-gradient-to-br from-rose-500 to-red-600 rounded-full flex items-center justify-center text-white shadow-[0_8px_20px_rgba(225,29,72,0.4)] active:scale-95 active:shadow-md transition-all duration-300 border-[6px] border-white" aria-label="Escanear QR / Acción rápida">
+              <button onClick={() => navigate('/mobile/qr')} className="w-16 h-16 bg-gradient-to-br from-rose-500 to-red-600 rounded-full flex items-center justify-center text-white shadow-[0_8px_20px_rgba(225,29,72,0.4)] active:scale-95 active:shadow-md transition-all duration-300 border-[6px] border-white">
                 <Icon name="plus" size={28} />
               </button>
             </div>

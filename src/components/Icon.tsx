@@ -30,7 +30,8 @@ const paths = {
   receipt: 'M5 3v18l3-2 4 2 4-2 3 2V3Zm4 5h6m-6 4h6m-6 4h3',
   calendar: 'M8 2v4m8-4v4M3 10h18M3 5h18v17H3Z',
   fingerprint: 'M4 10A8 8 0 0 1 20 10 M12 6A4 4 0 0 0 8 10 M12 2A8 8 0 0 0 4 10 M8 14A4 4 0 0 1 16 14 M12 18A4 4 0 0 0 16 14',
-  menu: 'M3 12h18 M3 6h18 M3 18h18'
+  menu: 'M3 12h18 M3 6h18 M3 18h18',
+  image: 'M3 5h18v14H3z M8 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4z M21 15l-5-5L5 21'
 }
 
 export type IconName = keyof typeof paths
