@@ -160,7 +160,7 @@ function MobilePaymentDetail() {
 }
 
 function MobilePaymentAmount() {
-  const { draft, updateDraft } = usePayment();
+  const { updateDraft } = usePayment();
   const [amount, setAmount] = useState('');
   const navigate = useNavigate();
 

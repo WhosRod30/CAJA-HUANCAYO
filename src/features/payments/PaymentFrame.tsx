@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { usePayment } from './PaymentProvider';
 import { Icon } from '../../components/Icon';

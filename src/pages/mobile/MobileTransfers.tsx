@@ -177,7 +177,7 @@ function MobileTransfersAmount() {
             }`}
             disabled={!parseFloat(amountStr) || parseFloat(amountStr) <= 0}
             onClick={() => {
-              updateDraft({ amount: parseFloat(amountStr) });
+              updateDraft({ amount: amountStr });
               navigate('/mobile/transferencias/revisar', { state: { currency } });
             }}
           >
@@ -190,7 +190,7 @@ function MobileTransfersAmount() {
 }
 
 function MobileTransfersReview() {
-  const { draft, submitTransfer } = useBanking();
+  const { draft } = useBanking();
   const navigate = useNavigate();
   const location = useLocation();
   const currency = location.state?.currency || 'PEN';
@@ -215,7 +215,7 @@ function MobileTransfersReview() {
         <div className="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 mb-6">
           <div className="text-center mb-8 pb-8 border-b border-gray-100 border-dashed">
             <p className="text-gray-400 text-sm font-medium mb-2 uppercase tracking-wider">Monto a enviar</p>
-            <p className="text-5xl font-extrabold text-gray-900 tracking-tight">{formatCurrency(draft.amount || 0, currency)}</p>
+            <p className="text-5xl font-extrabold text-gray-900 tracking-tight">{formatCurrency(parseFloat(draft.amount || '0'), currency)}</p>
           </div>
           
           <div className="space-y-5">
@@ -298,7 +298,7 @@ function MobileTransfersReceipt() {
       <div className="bg-white flex-1 rounded-t-[2.5rem] px-8 py-10 flex flex-col relative z-10 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
         <div className="text-center mb-10 pb-8 border-b border-gray-100 border-dashed">
           <p className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-2">Monto Enviado</p>
-          <p className="text-5xl font-extrabold text-gray-900 tracking-tight">{formatCurrency(draft.amount || 0, currency)}</p>
+          <p className="text-5xl font-extrabold text-gray-900 tracking-tight">{formatCurrency(parseFloat(draft.amount || '0'), currency)}</p>
         </div>
 
         <div className="space-y-6 mb-10">
