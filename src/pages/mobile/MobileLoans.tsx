@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/Icon';
 import { money } from '../../utils/format';
 
 export function MobileLoans() {
-  const navigate = useNavigate();
   const [showPayModal, setShowPayModal] = useState(false);
 
   // Datos simulados del préstamo actual
