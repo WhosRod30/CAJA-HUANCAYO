@@ -6,6 +6,7 @@ import type { IconName } from '../components/Icon'
 const navigation: { to: string; name: string; icon: IconName }[] = [
   { to: '/caja-virtual', name: 'Inicio', icon: 'home' },
   { to: '/transferencias', name: 'Transferencias', icon: 'transfer' },
+  { to: '/pagos', name: 'Pagos', icon: 'receipt' },
   { to: '/movimientos', name: 'Mis movimientos', icon: 'history' },
   { to: '/destinatarios', name: 'Destinatarios', icon: 'users' },
 ]

@@ -108,6 +108,16 @@ export function Dashboard() {
         <span>Todo a la mano</span>
       </div>
       <div className="shortcut-grid">
+        <Link to="/pagos" className="shortcut">
+          <span className="icon-tile red-soft">
+            <Icon name="receipt" />
+          </span>
+          <div>
+            <strong>Pagar servicios</strong>
+            <span>Agua, luz y más</span>
+          </div>
+          <Icon name="chevron" size={18} />
+        </Link>
         <Link to="/transferencias" className="shortcut">
           <span className="icon-tile red-soft">
             <Icon name="transfer" />
