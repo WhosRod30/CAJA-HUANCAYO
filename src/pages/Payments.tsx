@@ -36,13 +36,7 @@ export function Payments() {
         <p>Encuentra y paga tus servicios al instante.</p>
       </div>
 
-      <div className="apf-improvement-panel" style={{ backgroundColor: '#f0f9ff', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', borderLeft: '4px solid #0ea5e9' }}>
-        <strong>✨ Mejora UX (APF2):</strong>
-        <p style={{ margin: '0.5rem 0 0', fontSize: '0.9rem', color: '#0369a1' }}>
-          Se reemplazó la navegación fragmentada por categorías (agua, luz, recargas, etc.) por un <strong>Buscador Universal</strong>.
-          Esto reduce la carga cognitiva (Heurística 8) permitiendo al usuario encontrar directamente lo que busca sin adivinar la categoría institucional.
-        </p>
-      </div>
+
 
       <div className="search-container" style={{ position: 'relative', marginBottom: '2rem' }}>
         <Icon name="search" size={20} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />

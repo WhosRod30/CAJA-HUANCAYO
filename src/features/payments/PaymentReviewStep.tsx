@@ -14,12 +14,7 @@ export function PaymentReviewStep() {
 
   return (
     <div>
-      <div className="apf-improvement-panel" style={{ backgroundColor: '#f0f9ff', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', borderLeft: '4px solid #0ea5e9' }}>
-        <strong>✨ Mejora UX (APF2):</strong>
-        <p style={{ margin: '0.5rem 0 0', fontSize: '0.9rem', color: '#0369a1' }}>
-          <strong>Prevención de errores (Ley de Hick aplicada):</strong> Un solo botón de acción claro y un resumen limpio de los datos ingresados reducen la carga cognitiva y evitan confirmaciones accidentales. Los datos sensibles pueden ser enmascarados (Data Masking).
-        </p>
-      </div>
+
 
       <h2 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', textAlign: 'center' }}>Revisa tu pago</h2>
 
