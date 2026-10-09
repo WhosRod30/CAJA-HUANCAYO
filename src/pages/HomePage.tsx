@@ -28,9 +28,9 @@ const products: Product[] = [
     detail:
       'Conoce una forma de organizar tu dinero y consultar tus operaciones desde Caja Virtual.',
     points: [
-      'Consulta el saldo de tu cuenta de ejemplo.',
+      'Consulta el saldo de tu cuenta.',
       'Revisa tus movimientos en un solo lugar.',
-      'Explora las transferencias con datos ficticios.',
+      'Explora las transferencias con tus destinatarios.',
     ],
   },
   {
@@ -46,7 +46,7 @@ const products: Product[] = [
     points: [
       'Identifica la categoría de producto que te interesa.',
       'Consulta la información comercial en el sitio oficial.',
-      'Esta demostración no recibe solicitudes ni evalúa créditos.',
+      'Consulta los requisitos del crédito que te interesa.',
     ],
   },
   {
@@ -58,10 +58,10 @@ const products: Product[] = [
     description:
       'Un viaje, un nuevo proyecto o eso que tanto quieres. Empieza por tu meta.',
     detail:
-      'Explora la categoría de ahorro y conoce cómo consultar tu cuenta en la experiencia de demostración.',
+      'Explora la categoría de ahorro y conoce cómo consultar tu cuenta en Caja Virtual.',
     points: [
-      'Visualiza el dinero disponible en tu cuenta ficticia.',
-      'Consulta los ingresos y salidas de la demostración.',
+      'Visualiza el dinero disponible en tu cuenta.',
+      'Consulta tus ingresos y salidas.',
       'Las condiciones de productos reales se consultan en el portal oficial.',
     ],
   },
@@ -80,7 +80,7 @@ export function HomePage() {
   )
 
   useEffect(() => {
-    document.title = 'Caja Huancayo | Inicio · Prototipo académico'
+    document.title = 'Caja Huancayo | Inicio'
     window.scrollTo({ top: 0, behavior: 'instant' })
     document.getElementById('public-main')?.focus({ preventScroll: true })
   }, [])
@@ -111,9 +111,6 @@ export function HomePage() {
           <span>
             Personas <span aria-hidden="true">/</span> Negocios
           </span>
-          <span className="public-demo-label">
-            Prototipo académico — No oficial
-          </span>
         </div>
       </div>
       {/* WEB-UX-001: four public categories; one persistent digital-banking entry. */}
@@ -140,7 +137,7 @@ export function HomePage() {
           </Link>
           <div className="public-header-actions">
             <span className="public-header-caption">Siempre cerca de ti.</span>
-            <Link to="/caja-virtual" className="virtual-button">
+            <Link to="/login" className="virtual-button">
               <Icon name="lock" size={18} />
               <span>Caja Virtual</span>
               <Icon name="arrow" size={17} />
@@ -275,7 +272,7 @@ export function HomePage() {
               </span>
               <Icon name="chevron" size={17} />
             </button>
-            <Link to="/caja-virtual">
+            <Link to="/login">
               <span className="intent-icon">
                 <Icon name="transfer" size={25} />
               </span>
@@ -401,13 +398,9 @@ export function HomePage() {
               Consulta tus movimientos y transfiere desde una sola experiencia.
               Con pasos claros y tiempo para revisar antes de confirmar.
             </p>
-            <Link className="public-button light" to="/caja-virtual">
+            <Link className="public-button light" to="/login">
               Ingresar a Caja Virtual <Icon name="arrow" size={18} />
             </Link>
-            <small>
-              <Icon name="info" size={14} /> Acceso de demostración con datos
-              ficticios.
-            </small>
           </div>
           <ol
             className="digital-steps"
@@ -458,23 +451,12 @@ export function HomePage() {
               </summary>
               <p>
                 Entra a Caja Virtual y selecciona «Transferir dinero». Elige uno
-                de los destinatarios de ejemplo, ingresa el monto y revisa los
+                de los destinatarios guardados, ingresa el monto y revisa los
                 datos antes de confirmar.
               </p>
-              <Link to="/caja-virtual" className="public-inline-link">
+              <Link to="/login" className="public-inline-link">
                 Entrar a Caja Virtual <Icon name="arrow" size={16} />
               </Link>
-            </details>
-            <details>
-              <summary>
-                ¿Necesito una cuenta real para probarlo?
-                <Icon name="plus" size={18} />
-              </summary>
-              <p>
-                No. Esta es una propuesta académica: entrarás a un perfil
-                ficticio sin contraseñas, tarjetas ni datos bancarios reales.
-                Las operaciones son simuladas y se reinician al recargar.
-              </p>
             </details>
             <details>
               <summary>
@@ -482,7 +464,7 @@ export function HomePage() {
                 <Icon name="plus" size={18} />
               </summary>
               <p>
-                La información de esta propuesta es ilustrativa. Las tasas,
+                Las tasas,
                 requisitos y condiciones vigentes se consultan en el sitio
                 oficial de Caja Huancayo.
               </p>
@@ -510,7 +492,6 @@ export function HomePage() {
               height="41"
             />
             <p>Siempre cerca de ti.</p>
-            <span>Prototipo académico — No oficial</span>
           </div>
           <div>
             <h2>Encuentra lo que necesitas</h2>
@@ -521,7 +502,7 @@ export function HomePage() {
           <div>
             <h2>Estamos para ayudarte</h2>
             <a href="#preguntas">Preguntas frecuentes</a>
-            <Link to="/caja-virtual">Ingresar a Caja Virtual</Link>
+            <Link to="/login">Ingresar a Caja Virtual</Link>
             <a href="#public-main">Volver al inicio</a>
           </div>
         </div>
@@ -564,13 +545,6 @@ export function HomePage() {
                 </li>
               ))}
             </ul>
-            <div className="product-dialog-note">
-              <Icon name="info" size={18} />
-              <p>
-                Información ilustrativa del prototipo. No constituye una oferta
-                ni una solicitud de producto.
-              </p>
-            </div>
             <div className="product-dialog-actions">
               <a
                 className="public-inline-link"
@@ -584,7 +558,7 @@ export function HomePage() {
               </a>
               <Link
                 className="public-button red"
-                to="/caja-virtual"
+                to="/login"
                 onClick={() => dialog.current?.close()}
               >
                 Explorar Caja Virtual <Icon name="arrow" size={17} />
@@ -602,3 +576,4 @@ export function HomePage() {
     </div>
   )
 }
+

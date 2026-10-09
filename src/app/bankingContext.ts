@@ -26,6 +26,7 @@ export interface BankingContextValue extends BankingState {
   updateDraft: (
     changes: Partial<Pick<TransferDraft, 'amount' | 'note'>>,
   ) => void
+  recordPayment: (transaction: Transaction) => void
   submitTransfer: () => Promise<void>
   toggleFavorite: (id: string) => void
   setFailNext: (value: boolean) => void
@@ -40,3 +41,5 @@ export function useBanking() {
   if (!context) throw new Error('BankingProvider is required')
   return context
 }
+
+

@@ -60,8 +60,7 @@ export function RecipientStep() {
             )}
           </div>
           <span id="recipient-hint" className="field-hint">
-            Usa los datos ficticios del prototipo. Ejemplo de cuenta:
-            001000004582.
+            Busca por nombre, celular o cuenta.
           </span>
         </div>
         <div className="recipient-list-heading">
@@ -69,7 +68,7 @@ export function RecipientStep() {
             {normalized
               ? 'Resultados de búsqueda'
               : showAll
-                ? 'Destinatarios de ejemplo'
+                ? 'Destinatarios guardados'
                 : 'Tus frecuentes'}
           </h3>
           <button
@@ -133,8 +132,8 @@ export function RecipientStep() {
             </h3>
             <p>
               {normalized
-                ? 'Revisa el nombre o el número de cuenta. Solo están disponibles los datos de ejemplo.'
-                : 'Puedes elegir uno de los destinatarios de ejemplo para empezar.'}
+                ? 'Revisa el nombre o el número de cuenta. Elige uno de los destinatarios disponibles.'
+                : 'Puedes elegir uno de los destinatarios guardados para empezar.'}
             </p>
             <button
               type="button"
@@ -144,7 +143,7 @@ export function RecipientStep() {
                 setShowAll(true)
               }}
             >
-              Ver destinatarios de ejemplo <Icon name="arrow" size={16} />
+              Ver destinatarios guardados <Icon name="arrow" size={16} />
             </button>
           </div>
         )}
@@ -166,3 +165,4 @@ export function RecipientStep() {
     </TransferFrame>
   )
 }
+

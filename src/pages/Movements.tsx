@@ -19,7 +19,7 @@ export function Movements() {
         <div>
           <div className="eyebrow">TU ACTIVIDAD</div>
           <h1>Mis movimientos</h1>
-          <p>Consulta los ingresos y transferencias de tu cuenta de ejemplo.</p>
+          <p>Consulta los ingresos, transferencias y pagos de tu cuenta.</p>
         </div>
         <div className="balance-badge">
           <span>Saldo disponible</span>
@@ -49,7 +49,7 @@ export function Movements() {
             >
               <option value="all">Todos los movimientos</option>
               <option value="incoming">Ingresos</option>
-              <option value="outgoing">Transferencias enviadas</option>
+              <option value="outgoing">Salidas: transferencias y pagos</option>
             </select>
           </div>
         </div>
@@ -62,3 +62,4 @@ export function Movements() {
     </div>
   )
 }
+

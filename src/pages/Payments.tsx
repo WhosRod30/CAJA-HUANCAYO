@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Icon } from '../components/Icon';
-import { usePayment } from '../features/payments/PaymentProvider';
-import type { ServiceItem } from '../features/payments/PaymentProvider';
+import { usePayment } from '../features/payments/paymentContext';
+import type { ServiceItem } from '../features/payments/paymentContext';
 
 const DEMO_SERVICES: ServiceItem[] = [
   { id: '1', name: 'Luz del Sur', category: 'Luz', icon: 'star', requiresAmount: false },
@@ -84,3 +84,4 @@ export function Payments() {
     </div>
   );
 }
+

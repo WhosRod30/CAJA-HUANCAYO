@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { usePayment } from './PaymentProvider';
+import { usePayment } from './paymentContext';
 
 export function PaymentDetailStep() {
   const { draft, updateDraft } = usePayment();
@@ -9,8 +9,8 @@ export function PaymentDetailStep() {
 
   const handleNext = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!supply) return;
-    updateDraft({ supplyNumber: supply });
+    if (!/^\d{5,20}$/.test(supply.trim())) return;
+    updateDraft({ supplyNumber: supply.trim() });
     if (draft.service?.requiresAmount) {
       navigate('/pagos/monto');
     } else {
@@ -36,6 +36,8 @@ export function PaymentDetailStep() {
         <input
           id="supplyNumber"
           type="text"
+          inputMode="numeric"
+          maxLength={20}
           className="text-input"
           style={{ width: '100%', padding: '0.75rem', fontSize: '1rem', borderRadius: '8px', border: '1px solid #cbd5e1' }}
           value={supply}
@@ -48,7 +50,7 @@ export function PaymentDetailStep() {
       <button
         type="submit"
         className="button primary full-width"
-        disabled={!supply || supply.length < 5}
+        disabled={!/^\d{5,20}$/.test(supply.trim())}
         style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: 'none', background: '#e11d48', color: 'white', fontSize: '1rem', fontWeight: 600, cursor: supply.length >= 5 ? 'pointer' : 'not-allowed', opacity: supply.length >= 5 ? 1 : 0.5 }}
       >
         Continuar
@@ -56,3 +58,5 @@ export function PaymentDetailStep() {
     </form>
   );
 }
+
+

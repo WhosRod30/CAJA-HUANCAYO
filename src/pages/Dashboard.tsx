@@ -1,7 +1,7 @@
+import { demoRecipients } from '../mocks/recipients'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useBanking } from '../app/bankingContext'
-import { demoRecipients } from '../mocks/recipients'
 import { Icon } from '../components/Icon'
 import { RecipientAvatar } from '../components/RecipientAvatar'
 import { TransactionList } from '../components/TransactionList'
@@ -63,7 +63,7 @@ export function Dashboard() {
           <div className="account-bottom">
             <div>
               <strong>{account.name}</strong>
-              <span>Cuenta de ejemplo · •••• 1024</span>
+              <span>Cuenta · •••• 1024</span>
             </div>
             <Link
               to="/movimientos"
@@ -158,9 +158,6 @@ export function Dashboard() {
             </Link>
           </div>
           <TransactionList transactions={transactions.slice(0, 4)} />
-          <div className="panel-footnote">
-            Los movimientos mostrados son de demostración.
-          </div>
         </section>
         <section className="panel favorites-panel">
           <div className="panel-heading">
@@ -217,3 +214,4 @@ export function Dashboard() {
     </div>
   )
 }
+

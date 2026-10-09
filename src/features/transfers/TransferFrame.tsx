@@ -96,7 +96,7 @@ export function TransferFrame({
             </span>
             <h2>Desde tu cuenta</h2>
             <strong>{account.name}</strong>
-            <p>Cuenta de ejemplo · •••• 1024</p>
+            <p>Cuenta · •••• 1024</p>
             <div className="origin-balance">
               <span>Saldo disponible</span>
               <strong>{money(account.balance)}</strong>

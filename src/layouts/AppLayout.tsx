@@ -1,3 +1,4 @@
+import { useWebSession } from '../app/webSessionContext'
 import { useEffect } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Icon } from '../components/Icon'
@@ -12,12 +13,13 @@ const navigation: { to: string; name: string; icon: IconName }[] = [
 ]
 
 export function AppLayout() {
+  const { signOut } = useWebSession()
   const { pathname } = useLocation()
   const section =
     navigation.find((item) => pathname.startsWith(item.to))?.name ?? 'Ayuda'
 
   useEffect(() => {
-    document.title = `${section} | Caja Huancayo · Prototipo académico`
+    document.title = `${section} | Caja Huancayo`
     document.getElementById('main-content')?.focus({ preventScroll: true })
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname, section])
@@ -30,19 +32,17 @@ export function AppLayout() {
       <header className="brand-header">
         <NavLink
           className="wordmark"
-          to="/"
+          to="/inicio"
           aria-label="Caja Huancayo, página principal"
         >
           Caja Huancayo<span>CAJA VIRTUAL</span>
         </NavLink>
         <div className="header-right">
-          <span className="academic-label">
-            Prototipo académico — No oficial
-          </span>
           <span className="header-divider" />
-          <NavLink to="/" className="header-session portal-return">
+          <NavLink to="/inicio" className="header-session portal-return">
             <Icon name="back" size={15} /> Página principal
           </NavLink>
+          <button className="web-session-logout" onClick={signOut}>Cerrar sesión</button>
         </div>
       </header>
       <div className="app-shell">
@@ -70,8 +70,7 @@ export function AppLayout() {
               <Icon name="shield" size={27} />
               <strong>Tu tranquilidad primero</strong>
               <p>
-                Todas las operaciones de este prototipo usan dinero y datos
-                ficticios.
+                Revisa siempre el destinatario y el monto antes de confirmar.
               </p>
             </div>
             <NavLink
@@ -97,7 +96,7 @@ export function AppLayout() {
             <div className="profile">
               <span className="profile-text">
                 <strong>Valeria García</strong>
-                <small>Perfil de ejemplo</small>
+                
               </span>
               <span className="profile-avatar" aria-hidden="true">
                 VG
@@ -108,13 +107,11 @@ export function AppLayout() {
             <Outlet />
           </main>
           <footer className="page-footer">
-            <span>© Caja Huancayo · Propuesta académica de UX/UI</span>
-            <span>
-              <Icon name="shield" size={14} /> Sin operaciones bancarias reales
-            </span>
+            <span>© Caja Huancayo</span>
           </footer>
         </div>
       </div>
     </>
   )
 }
+

@@ -18,7 +18,7 @@ export function Help() {
         <ol className="help-steps">
           <li>
             <strong>Elige a quién enviar.</strong> Busca por nombre, celular o
-            cuenta de ejemplo.
+            cuenta.
           </li>
           <li>
             <strong>Ingresa el monto.</strong> El saldo disponible te ayudará a
@@ -36,19 +36,6 @@ export function Help() {
         <Link to="/transferencias" className="text-link">
           Ir a transferencias <Icon name="arrow" size={16} />
         </Link>
-      </section>
-      <section className="panel help-panel">
-        <h2>Sobre este prototipo</h2>
-        <p>
-          Propuesta académica para el curso de Interacción Hombre-Máquina. No es
-          una página oficial ni está afiliada a Caja Huancayo. Todas las
-          personas, cuentas y operaciones mostradas son ficticias.
-        </p>
-        <p>
-          Los cambios duran mientras esta pestaña permanezca abierta. Si
-          recargas, la demostración vuelve a sus datos iniciales. Nunca ingreses
-          información bancaria real.
-        </p>
       </section>
       <section className="panel help-panel">
         <h2>Escenarios para explorar</h2>

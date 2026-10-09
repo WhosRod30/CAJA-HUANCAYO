@@ -92,13 +92,13 @@ export function AmountStep() {
             aria-describedby="note-hint"
           />
           <span className="field-hint" id="note-hint">
-            Solo un mensaje ficticio, sin datos personales.{' '}
+            No incluyas información sensible.{' '}
             <span>{bank.draft.note.length}/70</span>
           </span>
         </div>
         <div className="cost-summary">
           <div>
-            <span>Comisión de esta demostración</span>
+            <span>Comisión</span>
             <strong>S/ 0.00</strong>
           </div>
           <div>

@@ -1,4 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { WebSessionProvider, RequireWebSession } from './app/WebSessionProvider'
+import { WebLogin } from './pages/WebLogin'
 import { BankingProvider } from './app/BankingProvider'
 import { AppLayout } from './layouts/AppLayout'
 import { HomePage } from './pages/HomePage'
@@ -36,11 +38,12 @@ import './App.css'
 function App() {
   return (
     <BrowserRouter>
-      <BankingProvider>
-        <PaymentProvider>
+      <WebSessionProvider><BankingProvider>
+        <PaymentProvider webPayments>
           <Routes>
-          <Route path="/" element={<Navigate to="/mobile/login" replace />} />
+          <Route path="/" element={<Navigate to="/inicio" replace />} />
           <Route path="inicio" element={<HomePage />} />
+          <Route path="login" element={<WebLogin />} />
           
           {/* RUTAS MOBILE (EXCLUSIVO PARA REDISEÑO MOBILE APF2) */}
           <Route path="mobile" element={<MobileLayout />}>
@@ -53,6 +56,7 @@ function App() {
             <Route path="prestamos" element={<MobileLoans />} />
           </Route>
 
+          <Route element={<RequireWebSession />}>
           <Route element={<AppLayout />}>
             <Route path="caja-virtual" element={<Dashboard />} />
             <Route path="transferencias" element={<Transfers />} />
@@ -102,11 +106,14 @@ function App() {
             <Route path="ayuda" element={<Help />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
+          </Route>
         </Routes>
         </PaymentProvider>
-      </BankingProvider>
+      </BankingProvider></WebSessionProvider>
     </BrowserRouter>
   )
 }
 
 export default App
+
+

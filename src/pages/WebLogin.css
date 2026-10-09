@@ -1,0 +1,60 @@
+.web-login { min-height: 100dvh; background: #f6f7f9; }
+.web-login-header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 25px max(24px, calc((100vw - 1180px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.web-login-header img { width: 235px; height: auto; }
+.web-login-header > a:last-child { color: #525966; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.web-login-grid { max-width: 1180px; margin: auto; padding: 64px 24px; display: grid; grid-template-columns: 1fr 440px; gap: 85px; align-items: center; }
+.web-login-kicker { color: #c9001b; font-weight: 700; letter-spacing: 2px; font-size: 13px; }
+.web-login-intro h1 { font-size: clamp(36px, 4vw, 58px); letter-spacing: -2px; margin: 20px 0 24px; }
+.web-login-intro > p { color: #525966; font-size: 18px; line-height: 1.8; max-width: 420px; }
+.web-login-advice { display: flex; align-items: flex-start; gap: 16px; border-top: 1px solid #dfe3e9; padding-top: 28px; margin-top: 48px; }
+.web-login-advice > svg { color: #c9001b; }
+.web-login-advice h2 { font-size: 17px; margin-bottom: 10px; }
+.web-login-advice p { color: #525966; font-size: 14px; line-height: 1.8; }
+.web-login-disclaimer { display: block; margin-top: 30px; color: #525966; font-size: 13px; }
+.web-login-card { background: #fff; padding: 34px; border: 1px solid #e5e7eb; border-radius: 20px; box-shadow: 0 16px 40px #172b4d08; }
+.web-login-lock { background: #fff0f2; color: #c9001b; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; margin-bottom: 22px; }
+.web-login-card h2 { font-size: 25px; margin-bottom: 10px; }
+.web-login-card > p { color: #525966; margin-bottom: 28px; }
+.web-login-card label { display: block; font-size: 14px; font-weight: 600; margin: 20px 0 9px; }
+.web-login-card input { width: 100%; min-height: 48px; font-size: 16px; }
+.web-login-password { position: relative; }
+.web-login-password input { padding-right: 50px !important; }
+.web-login-password button { position: absolute; right: 4px; top: 4px; height: 40px; width: 40px; border: 0; background: transparent; color: #525966; border-radius: 6px; }
+.web-login-error { color: #bd001a; font-size: 14px; min-height: 22px; margin: 14px 0; }
+.web-login-demo { background: #f6f7f9; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-top: 24px; display: flex; flex-direction: column; gap: 7px; font-size: 14px; }
+.web-login-demo p { color: #525966; font-size: 13px; margin-top: 5px; }
+.web-login-demo code { font-family: Consolas, monospace; }
+.web-login-help { margin-top: 20px; font-size: 14px; color: #525966; }
+.web-login-help summary { cursor: pointer; }
+.web-login-help p { padding-top: 12px; line-height: 1.7; }
+.web-session-logout { color: #c9001b; background: #fff0f2; border: 1px solid #ffd5dc; border-radius: 8px; padding: 9px 12px; font-size: 13px; white-space: nowrap; }
+@media (max-width: 900px) { .web-login-grid { gap: 35px; grid-template-columns: 1fr 400px; } }
+@media (max-width: 720px) { .web-login-grid { grid-template-columns: 1fr; padding: 30px 20px; gap: 28px; max-width: 500px; } .web-login-intro h1 { font-size: 36px; letter-spacing: -1px; } .web-login-intro > p { font-size: 16px; } .web-login-advice { margin-top: 22px; padding-top: 20px; } .web-login-header { padding: 20px; flex-wrap: wrap; gap: 14px; } .web-login-header img { width: 200px; } .web-login-card { padding: 26px 22px; } }
+.web-login-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 510px); align-items: start; gap: 64px; padding-top: 42px; }
+.web-login-intro { position: sticky; top: 35px; padding-top: 32px; }
+.web-login-card select { width: 100%; min-height: 48px; font-size: 14px; }
+.web-login-card-info { margin: 18px 0 0; padding: 14px 16px; background: #f6f7f9; border-radius: 10px; font-size: 13px; }
+.web-login-card-info > div { display: flex; justify-content: space-between; gap: 16px; margin: 7px 0; }
+.web-login-card-info dt { color: #525966; }
+.web-login-card-info dd { margin: 0; font-weight: 600; text-align: right; }
+.web-login-document-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.web-login-document-row > div { min-width: 0; }
+.web-login-hint { font-size: 13px; color: #525966; line-height: 1.6; margin-top: 8px; }
+.web-login-key-actions { display: flex; gap: 16px; justify-content: space-between; margin: 12px 0; }
+.web-login-key-actions button, .web-login-code-row button { border: 0; background: transparent; color: #b80019; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; padding: 8px 0; }
+.web-login-keyboard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px; border: 1px solid #e5e7eb; border-radius: 12px; background: #f6f7f9; }
+.web-login-keyboard button { border: 1px solid #d7dce3; border-radius: 8px; background: #fff; min-height: 44px; font-size: 18px; font-weight: 600; }
+.web-login-keyboard button:hover { background: #fff0f2; }
+.web-login-keyboard .web-key-delete { grid-column: span 2; font-size: 13px; }
+.web-login-verification { margin: 24px 0 0; padding: 14px 16px 16px; border: 1px solid #dfe3e9; border-radius: 12px; min-width: 0; }
+.web-login-verification legend { font-size: 14px; font-weight: 600; padding: 0 6px; }
+.web-login-code-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.web-login-code-row output { background: #fff0f2; color: #9b0015; font: 700 22px Consolas, monospace; letter-spacing: 3px; padding: 12px; border-radius: 8px; }
+.web-login-verification label { margin-top: 12px; }
+@media (max-width: 900px) { .web-login-grid { gap: 30px; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); } }
+@media (max-width: 720px) { .web-login-grid { grid-template-columns: 1fr; padding-top: 24px; } .web-login-intro { position: static; padding-top: 0; } .web-login-intro h1 { margin: 14px 0; } .web-login-advice { margin-top: 18px; } .web-login-document-row { grid-template-columns: 1fr; gap: 0; } .web-login-card-info > div { flex-wrap: wrap; gap: 6px; } .web-login-code-row { flex-wrap: wrap; } }
+.web-login-brand-image { margin: 28px 0 0; overflow: hidden; border-radius: 16px; border: 1px solid #e5e7eb; background: #fff; }
+.web-login-brand-image img { display: block; width: 100%; height: auto; }
+.web-login-brand-image figcaption { padding: 10px 14px; font-size: 12px; color: #525966; border-top: 1px solid #e5e7eb; }
+.web-login-intro .web-login-advice { margin-top: 24px; padding-top: 24px; }
+@media (max-width: 720px) { .web-login-brand-image { margin-top: 20px; } }

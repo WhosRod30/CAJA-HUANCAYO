@@ -5,9 +5,10 @@ import type { BankingState } from './bankingContext'
 import { demoAccount } from '../mocks/accounts'
 import { demoTransactions } from '../mocks/transactions'
 import { sendMockTransfer } from '../services/mockBanking'
-import type { Receipt, Recipient, TransferDraft } from '../types/banking'
+import type { Receipt, Recipient, TransferDraft, Transaction } from '../types/banking'
 
 type Action =
+  | { type: 'payment'; transaction: Transaction }
   | { type: 'begin'; draft: TransferDraft }
   | { type: 'recipient'; recipient: Recipient }
   | { type: 'draft'; changes: Partial<Pick<TransferDraft, 'amount' | 'note'>> }
@@ -32,6 +33,9 @@ const initial: BankingState = {
 
 function reducer(state: BankingState, action: Action): BankingState {
   switch (action.type) {
+    case 'payment':
+      if (state.transactions.some((item) => item.id === action.transaction.id)) return state
+      return { ...state, account: { ...state.account, balance: state.account.balance - action.transaction.amount }, transactions: [action.transaction, ...state.transactions] }
     case 'begin':
       return {
         ...state,
@@ -92,7 +96,12 @@ function reducer(state: BankingState, action: Action): BankingState {
 }
 
 export function BankingProvider({ children }: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, initial)
+  const [state, reactDispatch] = useReducer(reducer, initial)
+  const stateRef = useRef(initial)
+  function dispatch(action: Action) {
+    stateRef.current = reducer(stateRef.current, action)
+    reactDispatch(action)
+  }
   const inFlight = useRef<Promise<void> | null>(null)
 
   function beginTransfer(recipient?: Recipient) {
@@ -139,6 +148,12 @@ export function BankingProvider({ children }: { children: ReactNode }) {
         ...state,
         beginTransfer,
         submitTransfer,
+        recordPayment: (transaction) => {
+          if (stateRef.current.transactions.some((item) => item.id === transaction.id)) return
+          if (inFlight.current) throw new Error('Espera a que termine la transferencia antes de pagar. Tu saldo no cambió.')
+          if (!Number.isSafeInteger(transaction.amount) || transaction.amount <= 0 || transaction.amount > stateRef.current.account.balance) throw new Error('No cuentas con saldo suficiente para este pago. Tu saldo no cambió.')
+          dispatch({ type: 'payment', transaction })
+        },
         selectRecipient: (recipient) =>
           dispatch({ type: 'recipient', recipient }),
         updateDraft: (changes) => dispatch({ type: 'draft', changes }),
@@ -153,3 +168,5 @@ export function BankingProvider({ children }: { children: ReactNode }) {
     </BankingContext.Provider>
   )
 }
+
+

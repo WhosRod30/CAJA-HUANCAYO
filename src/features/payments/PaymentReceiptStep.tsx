@@ -1,16 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-import { usePayment } from './PaymentProvider';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { usePayment } from './paymentContext';
 import { Icon } from '../../components/Icon';
 import { money } from '../../utils/format';
 
 export function PaymentReceiptStep() {
-  const { draft, receiptId, resetPayment } = usePayment();
+  const { receipt, status, resetPayment } = usePayment();
   const navigate = useNavigate();
 
   const handleFinish = () => {
     resetPayment();
     navigate('/pagos', { replace: true });
   };
+
+  if (!receipt || status !== 'success') return <Navigate to="/pagos" replace />;
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -23,19 +25,19 @@ export function PaymentReceiptStep() {
       <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', textAlign: 'left' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
           <span style={{ color: '#64748b' }}>Monto pagado</span>
-          <strong style={{ fontSize: '1.1rem' }}>{money(draft.amount)}</strong>
+          <strong style={{ fontSize: '1.1rem' }}>{money(receipt.amountCents)}</strong>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
           <span style={{ color: '#64748b' }}>Servicio</span>
-          <strong>{draft.service?.name}</strong>
+          <strong>{receipt.service.name}</strong>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
           <span style={{ color: '#64748b' }}>Suministro</span>
-          <strong>{draft.supplyNumber}</strong>
+          <strong>{receipt.supplyNumber}</strong>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <span style={{ color: '#64748b' }}>N° Operación</span>
-          <strong>{receiptId}</strong>
+          <strong>{receipt.id}</strong>
         </div>
       </div>
 
@@ -56,3 +58,5 @@ export function PaymentReceiptStep() {
     </div>
   );
 }
+
+

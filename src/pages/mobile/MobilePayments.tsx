@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 import { Icon } from '../../components/Icon';
-import { usePayment, PaymentProvider } from '../../features/payments/PaymentProvider';
-import type { ServiceItem } from '../../features/payments/PaymentProvider';
+import { PaymentProvider } from '../../features/payments/PaymentProvider';
+import { usePayment } from '../../features/payments/paymentContext';
+import type { ServiceItem } from '../../features/payments/paymentContext';
 import { money } from '../../utils/format';
 
 const DEMO_SERVICES: ServiceItem[] = [
@@ -370,3 +371,4 @@ export function MobilePayments() {
     </PaymentProvider>
   );
 }
+

@@ -1,29 +1,15 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { usePayment } from './PaymentProvider';
-
+import { Link, Navigate } from 'react-router-dom'
+import { usePayment } from './paymentContext'
 export function PaymentProcessingStep() {
-  const { status } = usePayment();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (status === 'success') {
-      navigate('/pagos/comprobante', { replace: true });
-    } else if (status === 'error') {
-      navigate('/pagos', { replace: true });
-    }
-  }, [status, navigate]);
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', textAlign: 'center' }}>
-      <div className="spinner" style={{ width: '48px', height: '48px', border: '4px solid #f1f5f9', borderTopColor: '#e11d48', borderRadius: '50%', animation: 'spin 1s linear infinite', marginBottom: '1.5rem' }}></div>
-      <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Procesando pago...</h2>
-      <p style={{ color: '#64748b' }}>Por favor, no cierres esta pantalla.</p>
-      <style>{`
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
-    </div>
-  );
+  const { status, error, submitPayment } = usePayment()
+  if (status === 'success') return <Navigate to="/pagos/comprobante" replace />
+  if (status === 'idle') return <Navigate to="/pagos/revisar" replace />
+  return <section style={{ minHeight: '40vh', textAlign: 'center', padding: '2rem 0' }} aria-busy={status === 'pending'}>
+    {status === 'error' ? <>
+      <h2>No se completó el pago</h2>
+      <p role="alert" className="field-error" style={{ margin: '1rem 0' }}>{error}</p>
+      <p className="field-hint">No se registró un cargo por esta operación.</p>
+      <div className="processing-actions"><button className="button primary" onClick={() => void submitPayment()}>Intentar nuevamente</button><Link className="button secondary" to="/pagos/revisar">Revisar datos</Link></div>
+    </> : <div role="status"><span className="spinner" aria-hidden="true" /><h2 style={{ marginTop: '1.5rem' }}>Procesando pago…</h2><p className="field-hint">Espera un momento. No necesitas volver a confirmar.</p></div>}
+  </section>
 }

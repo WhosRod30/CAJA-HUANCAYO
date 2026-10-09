@@ -1,15 +1,18 @@
 import { useNavigate } from 'react-router-dom';
-import { usePayment } from './PaymentProvider';
-import { money } from '../../utils/format';
+import { usePayment } from './paymentContext';
+import { useBanking } from '../../app/bankingContext';
+import { money, amountError } from '../../utils/format';
 
 export function PaymentReviewStep() {
-  const { draft, submitPayment } = usePayment();
+  const { draft, submitPayment, status } = usePayment();
   const navigate = useNavigate();
+  const { account } = useBanking();
+  const validation = amountError(String(draft.amount), account.balance);
 
-  const handleConfirm = async () => {
+  const handleConfirm = () => {
+    if (validation) return;
+    void submitPayment();
     navigate('/pagos/procesando');
-    await submitPayment();
-    navigate('/pagos/comprobante', { replace: true });
   };
 
   return (
@@ -34,11 +37,14 @@ export function PaymentReviewStep() {
         <div style={{ height: '1px', background: '#e2e8f0', margin: '1rem 0' }}></div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ color: '#64748b', fontSize: '1.1rem' }}>Monto a pagar</span>
-          <strong style={{ fontSize: '1.5rem', color: '#0f172a' }}>{money(draft.amount)}</strong>
+          <strong style={{ fontSize: '1.5rem', color: '#0f172a' }}>{money(Math.round(draft.amount * 100))}</strong>
         </div>
       </div>
 
+      <p className="field-error" role="alert">{validation}</p>
+      <p className="field-hint" style={{ marginBottom: '1rem' }}>Saldo disponible: {money(account.balance)}</p>
       <button
+        disabled={status === 'pending' || !!validation}
         onClick={handleConfirm}
         className="button primary full-width"
         style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: 'none', background: '#e11d48', color: 'white', fontSize: '1.1rem', fontWeight: 600, cursor: 'pointer' }}
@@ -48,3 +54,7 @@ export function PaymentReviewStep() {
     </div>
   );
 }
+
+
+
+

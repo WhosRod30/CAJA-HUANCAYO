@@ -18,8 +18,8 @@ export function ReceiptStep() {
           <Icon name="receipt" size={36} />
           <h1>Este comprobante ya no está disponible</h1>
           <p>
-            Los comprobantes se guardan durante esta sesión de demostración.
-            Puedes realizar una nueva transferencia ficticia.
+            Los comprobantes se guardan durante esta sesión.
+            Puedes realizar una nueva transferencia.
           </p>
           <Link to="/transferencias" className="button primary">
             Ir a transferencias
@@ -71,10 +71,10 @@ export function ReceiptStep() {
             <br />
             correctamente.
           </h1>
-          <p>Tu transferencia de demostración se completó.</p>
+          <p>Tu transferencia se completó.</p>
           <div className="receipt-amount">{money(receipt.amount)}</div>
           <span className="success-pill">
-            <span /> Operación simulada exitosa
+            <span /> Operación exitosa
           </span>
         </div>
         <dl className="summary-details receipt-details">
@@ -101,7 +101,7 @@ export function ReceiptStep() {
             <dd className="operation-id">{receipt.operation}</dd>
           </div>
           <div>
-            <dt>Comisión de demostración</dt>
+            <dt>Comisión</dt>
             <dd>S/ 0.00</dd>
           </div>
           {receipt.note && (
@@ -122,8 +122,8 @@ export function ReceiptStep() {
           </button>
           <p className="download-status" role="status">
             {downloaded
-              ? 'La descarga del comprobante de ejemplo está preparada.'
-              : 'Comprobante de ejemplo · Sin valor bancario'}
+              ? 'La descarga del comprobante está preparada.'
+              : ''}
           </p>
         </div>
       </section>

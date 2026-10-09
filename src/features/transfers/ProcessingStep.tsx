@@ -57,10 +57,6 @@ export function ProcessingStep() {
             </div>
           </>
         )}
-        <div className="processing-note">
-          <Icon name="shield" size={17} /> Entorno de demostración · Sin dinero
-          real
-        </div>
       </section>
     </div>
   )

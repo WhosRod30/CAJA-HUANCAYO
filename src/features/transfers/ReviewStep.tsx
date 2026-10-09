@@ -34,7 +34,7 @@ export function ReviewStep() {
           <dt>Desde</dt>
           <dd>
             {bank.account.name}
-            <small>Cuenta de ejemplo · •••• 1024</small>
+            <small>Cuenta · •••• 1024</small>
           </dd>
         </div>
         <div>
@@ -47,7 +47,7 @@ export function ReviewStep() {
           </dd>
         </div>
         <div>
-          <dt>Comisión de demostración</dt>
+          <dt>Comisión</dt>
           <dd>S/ 0.00</dd>
         </div>
         {bank.draft.note && (
@@ -65,10 +65,6 @@ export function ReviewStep() {
           <dd>{money(bank.account.balance - amount)}</dd>
         </div>
       </dl>
-      <div className="info-note">
-        <Icon name="info" size={19} />
-        <p>Esta es una transferencia simulada. No se enviará dinero real.</p>
-      </div>
       <div className="form-footer review-footer">
         <Link className="button secondary" to="/transferencias/monto">
           <Icon name="back" size={17} />

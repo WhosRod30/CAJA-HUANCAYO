@@ -1,6 +1,6 @@
+import { demoRecipients } from '../mocks/recipients'
 import { useNavigate } from 'react-router-dom'
 import { useBanking } from '../app/bankingContext'
-import { demoRecipients } from '../mocks/recipients'
 import { RecipientAvatar } from '../components/RecipientAvatar'
 import { Icon } from '../components/Icon'
 
@@ -17,13 +17,6 @@ export function Recipients() {
             Marca tus frecuentes para encontrarlos más rápido al transferir.
           </p>
         </div>
-      </div>
-      <div className="info-note">
-        <Icon name="info" />
-        <p>
-          Estos contactos y números son ficticios. Úsalos para explorar el
-          prototipo.
-        </p>
       </div>
       <div className="recipient-directory">
         {demoRecipients.map((recipient) => (
@@ -43,12 +36,12 @@ export function Recipients() {
             <p>{recipient.bank}</p>
             <dl className="directory-details">
               <div>
-                <dt>Cuenta de ejemplo</dt>
+                <dt>Cuenta</dt>
                 <dd>{recipient.account}</dd>
               </div>
               {recipient.phone && (
                 <div>
-                  <dt>Celular de ejemplo</dt>
+                  <dt>Celular</dt>
                   <dd>{recipient.phone}</dd>
                 </div>
               )}
@@ -72,3 +65,4 @@ export function Recipients() {
     </div>
   )
 }
+

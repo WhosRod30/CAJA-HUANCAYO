@@ -1,6 +1,6 @@
+import { demoRecipients } from '../mocks/recipients'
 import { Link, useNavigate } from 'react-router-dom'
 import { useBanking } from '../app/bankingContext'
-import { demoRecipients } from '../mocks/recipients'
 import { Icon } from '../components/Icon'
 import { RecipientAvatar } from '../components/RecipientAvatar'
 import { TransactionList } from '../components/TransactionList'
@@ -109,3 +109,4 @@ export function Transfers() {
     </div>
   )
 }
+
