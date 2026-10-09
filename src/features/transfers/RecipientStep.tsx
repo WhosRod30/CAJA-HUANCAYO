@@ -17,10 +17,25 @@ export function RecipientStep() {
   const results = demoRecipients.filter((r) =>
     normalized
       ? normalize(`${r.name} ${r.bank}`).includes(normalized) ||
-        (numberQuery !== '' &&
-          (r.account.includes(numberQuery) || r.phone.includes(numberQuery)))
+      (numberQuery !== '' &&
+        (r.account.includes(numberQuery) || r.phone.includes(numberQuery)))
       : showAll || bank.favorites.includes(r.id),
   )
+
+  const isNewAccount = /^\d+$/.test(numberQuery) && numberQuery.length >= 10
+  if (isNewAccount) {
+    results.unshift({
+      id: 'new-' + numberQuery,
+      name: 'Juan Perez (Validado)',
+      account: numberQuery,
+      bank: 'Caja Huancayo',
+      own: false,
+      phone: '',
+      initials: 'JP',
+      color: 'indigo'
+    } as any)
+  }
+
   return (
     <TransferFrame
       step={1}
@@ -43,8 +58,13 @@ export function RecipientStep() {
             <input
               id="recipient-search"
               autoComplete="off"
+              maxLength={20}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value
+                if (/^\d*$/.test(val) && val.length > 20) return
+                setQuery(val)
+              }}
               placeholder="Por ejemplo, María Torres"
               aria-describedby="recipient-hint"
             />

@@ -24,6 +24,8 @@ function MobileTransfersSearch() {
       (r.phone && r.phone.includes(query))
   );
 
+  const isNewAccount = /^\d+$/.test(query) && query.length >= 10;
+
   return (
     <div className="bg-gray-50 min-h-full">
       <div className="bg-[#0B0F19] pt-12 pb-8 px-6 rounded-b-[2rem] shadow-sm relative overflow-hidden">
@@ -44,10 +46,16 @@ function MobileTransfersSearch() {
           </div>
           <input
             type="search"
+            maxLength={20}
             placeholder="Nombre, celular o cuenta..."
             className="w-full py-3 pr-4 outline-none text-gray-900 bg-transparent text-[15px] font-medium placeholder-gray-400"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              const val = e.target.value;
+              // Si es un número muy largo (cuenta), limitamos a 20 caracteres
+              if (/^\d*$/.test(val) && val.length > 20) return;
+              setQuery(val);
+            }}
           />
         </div>
       </div>
@@ -57,6 +65,37 @@ function MobileTransfersSearch() {
           {query ? 'Resultados' : 'Contactos Frecuentes'}
         </h2>
         <div className="flex flex-col gap-3">
+          {isNewAccount && (
+            <button
+              onClick={() => {
+                beginTransfer();
+                selectRecipient({
+                  id: 'new-' + Date.now(),
+                  name: 'Juan Perez (Validado)',
+                  account: query,
+                  bank: 'Caja Huancayo',
+                  phone: '',
+                  initials: 'JP',
+                  color: 'indigo'
+                });
+                navigate('/mobile/transferencias/monto');
+              }}
+              className="bg-rose-50 rounded-[1.5rem] p-4 shadow-sm border border-rose-100 flex items-center justify-between active:scale-95 transition-transform group mb-2"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-rose-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                  <Icon name="plus" size={24} />
+                </div>
+                <div className="text-left">
+                  <h3 className="font-bold text-rose-900 text-[15px]">Nueva Cuenta</h3>
+                  <p className="text-xs font-medium text-rose-500 mt-0.5">Transferir a {query}</p>
+                </div>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-rose-500 shadow-sm">
+                <Icon name="chevron" size={16} />
+              </div>
+            </button>
+          )}
           {filtered.length > 0 ? (
             filtered.map((recipient) => (
               <button
