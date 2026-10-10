@@ -8,19 +8,7 @@ export function MobileLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Redirigir a la vista de escritorio si la pantalla es grande
-    const checkScreenSize = () => {
-      if (window.innerWidth > 768) {
-        navigate('/inicio', { replace: true });
-      }
-    };
 
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, [navigate]);
 
   const handleLogin = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
