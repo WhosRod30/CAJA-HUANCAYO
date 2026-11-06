@@ -29,12 +29,12 @@
   display: flex;
   align-items: center;
   font-weight: 750;
-  font-size: 29px;
+  font-size: 1.8125rem;
   letter-spacing: -1.3px;
   white-space: nowrap;
 }
 .wordmark span {
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   margin-left: 24px;
@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .academic-label {
   border: 1px solid #ffffff70;
@@ -79,7 +79,7 @@
 }
 .workspace-label {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 1.6px;
   padding: 0 15px;
@@ -98,7 +98,7 @@
   padding: 14px 15px;
   border-radius: 8px;
   color: #62656d;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
   transition:
     background 0.18s,
@@ -146,12 +146,12 @@
 }
 .sidebar-note strong {
   display: block;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .sidebar-note p {
   color: var(--text-secondary);
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.75;
   margin-top: 7px;
 }
@@ -159,7 +159,7 @@
   margin-top: 18px;
   border-top: 1px solid var(--border);
   padding: 19px 15px;
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .workspace {
@@ -183,7 +183,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .breadcrumb span {
   color: #555962;
@@ -201,12 +201,12 @@
   gap: 2px;
 }
 .profile-text strong {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .profile-text small {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .profile-avatar {
   display: grid;
@@ -218,7 +218,7 @@
   box-shadow: 0 0 0 1px #f1dddd;
   border-radius: 50%;
   color: #b82b3b;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 #main-content {
@@ -251,7 +251,7 @@
 }
 .eyebrow {
   color: #626b78;
-  font-size: 10px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 1.9px;
   margin-bottom: 9px;
@@ -263,7 +263,7 @@
 }
 .page-heading p {
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 0.875rem;
   margin-top: 9px;
   line-height: 1.7;
 }
@@ -276,7 +276,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 0.875rem;
   white-space: nowrap;
   align-self: flex-end;
   padding-bottom: 5px;
@@ -319,7 +319,7 @@
   display: flex;
   align-items: center;
   gap: 11px;
-  font-size: 10px;
+  font-size: 0.875rem;
   letter-spacing: 1.7px;
   position: relative;
   z-index: 1;
@@ -336,7 +336,7 @@
   padding: 3px 7px;
   border: 1px solid #ffffff1a;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 0.875rem;
   letter-spacing: 1px;
 }
 .balance-label {
@@ -344,11 +344,11 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #fff0f3;
 }
 .balance {
-  font-size: 39px;
+  font-size: 2.4375rem;
   font-weight: 600;
   letter-spacing: -0.9px;
   line-height: 1.15;
@@ -366,12 +366,12 @@
 }
 .account-bottom strong {
   display: block;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .account-bottom span {
   display: block;
-  font-size: 11px;
+  font-size: 0.875rem;
   margin-top: 3px;
   color: #ffe0e4;
   letter-spacing: 0.4px;
@@ -444,17 +444,17 @@
   color: #626b78;
   border: 1px solid var(--border);
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 0.875rem;
   padding: 4px 8px;
   white-space: nowrap;
 }
 .quick-transfer-card h2 {
-  font-size: 23px;
+  font-size: 1.4375rem;
   font-weight: 650;
   letter-spacing: -0.45px;
 }
 .quick-transfer-card p {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.7;
   margin: 9px 0 18px;
@@ -469,7 +469,7 @@
   border: 1px solid transparent;
   border-radius: 7px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.875rem;
   min-height: 43px;
   transition:
     background 0.16s,
@@ -511,13 +511,13 @@
 }
 .section-heading h2,
 .panel-heading h2 {
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: -0.2px;
   font-weight: 650;
 }
 .section-heading > span {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .shortcut-grid {
   display: grid;
@@ -548,12 +548,12 @@
   min-width: 0;
 }
 .shortcut strong {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .shortcut div > span {
   color: #626b78;
-  font-size: 10px;
+  font-size: 0.875rem;
 }
 .shortcut > svg {
   margin-left: auto;
@@ -591,7 +591,7 @@
   gap: 7px;
   color: #cd0019;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.875rem;
   background: transparent;
   border: 0;
   padding: 4px 0;
@@ -635,12 +635,12 @@
 .transaction-copy strong {
   display: block;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.875rem;
   overflow-wrap: anywhere;
 }
 .transaction-copy span {
   display: block;
-  font-size: 10px;
+  font-size: 0.875rem;
   color: #626b78;
   margin-top: 4px;
 }
@@ -650,21 +650,21 @@
   flex-shrink: 0;
 }
 .transaction-value strong {
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
 }
 .transaction-value time {
   display: block;
   color: #626b78;
-  font-size: 10px;
+  font-size: 0.875rem;
   margin-top: 4px;
 }
 .positive {
   color: #1a805a;
 }
 .panel-footnote {
-  font-size: 10px;
+  font-size: 0.875rem;
   color: #626b78;
   padding: 12px 23px 18px;
 }
@@ -679,7 +679,7 @@
 }
 .panel-intro {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
   padding: 0 23px;
 }
 .favorite-list {
@@ -703,7 +703,7 @@
   min-width: 0;
 }
 .favorite-row strong {
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #34363c;
   display: block;
@@ -711,7 +711,7 @@
 .favorite-row small {
   color: #626b78;
   display: block;
-  font-size: 10px;
+  font-size: 0.875rem;
   margin-top: 4px;
 }
 .favorite-row > svg {
@@ -725,14 +725,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
   flex-shrink: 0;
 }
 .avatar-small {
   width: 36px;
   height: 36px;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .rose {
   color: #a85262;
@@ -753,7 +753,7 @@
 .favorites-panel > .button {
   width: calc(100% - 46px);
   margin: 0 23px;
-  font-size: 11px;
+  font-size: 0.875rem;
   min-height: 37px;
   padding: 9px;
 }
@@ -773,18 +773,18 @@
 }
 .trust-strip strong {
   display: block;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #4c625c;
 }
 .trust-strip div span {
   display: block;
-  font-size: 11px;
+  font-size: 0.875rem;
   margin-top: 4px;
 }
 .trust-caption {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 0.875rem;
   color: #626b78;
   white-space: nowrap;
 }
@@ -795,7 +795,7 @@
   gap: 15px;
   padding: 16px 38px 22px;
   color: #626b78;
-  font-size: 10px;
+  font-size: 0.875rem;
   max-width: 1340px;
   width: 100%;
   margin: auto auto 0;
@@ -818,15 +818,15 @@
 }
 .transfer-banner .eyebrow {
   color: #c5001c;
-  font-size: 10px;
+  font-size: 0.875rem;
 }
 .transfer-banner h2 {
-  font-size: 27px;
+  font-size: 1.6875rem;
   letter-spacing: -0.7px;
   max-width: 420px;
 }
 .transfer-banner p {
-  font-size: 13px;
+  font-size: 0.875rem;
   color: var(--text-secondary);
   margin: 12px 0 24px;
 }
@@ -845,7 +845,7 @@
   display: grid;
   place-items: center;
   z-index: 1;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   border: 5px solid #fff;
   box-shadow: 0 6px 20px #352c3710;
@@ -868,7 +868,7 @@
 .transfer-art > span {
   position: absolute;
   bottom: 5px;
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .section-block {
@@ -895,11 +895,11 @@
 }
 .recipient-tile > strong {
   margin-top: 9px;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .recipient-tile > span:not(.avatar):not(.text-link) {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .recipient-tile .text-link {
@@ -913,12 +913,12 @@
 }
 .balance-badge span {
   display: block;
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .balance-badge strong {
   display: block;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 650;
   color: #cb001d;
   margin-top: 2px;
@@ -938,7 +938,7 @@
 .field label,
 .search-field label {
   color: #444b57;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 input:not([type='radio']):not([type='checkbox']),
@@ -950,7 +950,7 @@ select {
   padding: 10px 13px;
   border-radius: 7px;
   width: 100%;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 input::placeholder {
   color: #626b78;
@@ -986,7 +986,7 @@ input::placeholder {
   margin: 0 25px;
   padding: 12px 0;
   color: #626b78;
-  font-size: 12px;
+  font-size: 0.875rem;
   border-bottom: 1px solid #eff0f3;
 }
 .recipient-directory {
@@ -1005,18 +1005,18 @@ input::placeholder {
   margin-bottom: 15px;
 }
 .directory-card h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 4px;
 }
 .directory-card > p {
   color: #626b78;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .directory-details {
   border-top: 1px solid #eff0f3;
   margin: 20px 0;
   padding-top: 12px;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .directory-details > div {
   display: flex;
@@ -1047,7 +1047,7 @@ input::placeholder {
   background: #f5f7fa;
   border: 1px solid #e8ebf1;
   color: #697484;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .info-note svg {
   margin-top: 1px;
@@ -1060,11 +1060,11 @@ input::placeholder {
   margin-bottom: 22px;
 }
 .help-panel h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 16px;
 }
 .help-panel p {
-  font-size: 13px;
+  font-size: 0.875rem;
   color: #626b78;
   line-height: 1.8;
   margin-top: 12px;
@@ -1072,7 +1072,7 @@ input::placeholder {
 .help-steps {
   padding-left: 23px;
   color: #626b78;
-  font-size: 13px;
+  font-size: 0.875rem;
   margin-bottom: 14px;
 }
 .help-steps li {
@@ -1099,12 +1099,12 @@ input::placeholder {
 }
 .check-option strong {
   display: block;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .check-option small {
   display: block;
   color: #626b78;
-  font-size: 12px;
+  font-size: 0.875rem;
   margin-top: 5px;
 }
 .help-actions {
@@ -1117,7 +1117,7 @@ input::placeholder {
   align-items: center;
   gap: 8px;
   color: #626b78;
-  font-size: 12px;
+  font-size: 0.875rem;
   min-height: 32px;
   margin-bottom: 16px;
 }
@@ -1128,7 +1128,7 @@ input::placeholder {
   margin-bottom: 24px;
 }
 .flow-title h1 {
-  font-size: 29px;
+  font-size: 1.8125rem;
 }
 .step-indicator {
   display: flex;
@@ -1145,7 +1145,7 @@ input::placeholder {
   align-items: center;
   gap: 9px;
   flex: 1;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #626b78;
   white-space: nowrap;
 }
@@ -1172,7 +1172,7 @@ input::placeholder {
   border-radius: 50%;
   color: #626b78;
   background: #fff;
-  font-size: 12px;
+  font-size: 0.875rem;
   flex-shrink: 0;
 }
 .step-indicator .current {
@@ -1206,7 +1206,7 @@ input::placeholder {
   margin-bottom: 26px;
 }
 .step-caption {
-  font-size: 10px;
+  font-size: 0.875rem;
   letter-spacing: 1.4px;
   font-weight: 600;
   color: #a27c83;
@@ -1214,19 +1214,19 @@ input::placeholder {
   margin-bottom: 9px;
 }
 .flow-panel-heading h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 650;
   letter-spacing: -0.6px;
 }
 .flow-panel-heading p {
   color: #626b78;
-  font-size: 13px;
+  font-size: 0.875rem;
   margin-top: 10px;
   line-height: 1.7;
 }
 .field-hint {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
   line-height: 1.7;
 }
 .recipient-list-heading {
@@ -1236,7 +1236,7 @@ input::placeholder {
   margin: 26px 0 10px;
 }
 .recipient-list-heading h3 {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .recipient-options {
@@ -1284,14 +1284,14 @@ input::placeholder {
   min-width: 0;
 }
 .recipient-option-text > strong {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
   display: block;
 }
 .recipient-option-text > span {
   display: block;
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
   margin-top: 4px;
 }
 .dot-separator {
@@ -1317,7 +1317,7 @@ input::placeholder {
   background: #eff0f3;
   color: #626b78;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 0.875rem;
   margin-left: 8px;
   padding: 2px 4px;
 }
@@ -1331,7 +1331,7 @@ input::placeholder {
   border-top: 1px solid #eceef2;
 }
 .selection-hint {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .selection-hint strong {
@@ -1345,15 +1345,15 @@ input::placeholder {
   margin-bottom: 18px;
 }
 .origin-card h2 {
-  font-size: 15px;
+  font-size: 0.9375rem;
   margin-bottom: 15px;
 }
 .origin-card > strong {
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .origin-card > p {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
   margin-top: 5px;
 }
@@ -1365,11 +1365,11 @@ input::placeholder {
 .origin-balance span {
   display: block;
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .origin-balance strong {
   display: block;
-  font-size: 23px;
+  font-size: 1.4375rem;
   letter-spacing: -0.5px;
   font-weight: 650;
   margin-top: 5px;
@@ -1380,7 +1380,7 @@ input::placeholder {
   padding-top: 15px;
 }
 .aside-recipient > span {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .aside-recipient > div {
@@ -1391,12 +1391,12 @@ input::placeholder {
 }
 .aside-recipient strong {
   display: block;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .aside-recipient small {
   display: block;
-  font-size: 10px;
+  font-size: 0.875rem;
   color: #626b78;
   margin-top: 3px;
 }
@@ -1405,13 +1405,13 @@ input::placeholder {
   color: #626b78;
 }
 .flow-advice h3 {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #65736c;
   margin-top: 13px;
 }
 .flow-advice p {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #626b78;
   line-height: 1.8;
   margin-top: 8px;
@@ -1426,15 +1426,15 @@ input::placeholder {
   gap: 12px;
 }
 .empty-state h3 {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #616b7a;
 }
 .empty-state h1 {
-  font-size: 23px;
+  font-size: 1.4375rem;
   color: #4f5a69;
 }
 .empty-state p {
-  font-size: 13px;
+  font-size: 0.875rem;
   line-height: 1.8;
   max-width: 440px;
 }
@@ -1442,7 +1442,7 @@ input::placeholder {
   margin: 18px 23px;
   text-align: center;
   color: #626b78;
-  font-size: 13px;
+  font-size: 0.875rem;
   padding: 15px;
 }
 .compact-empty p {
@@ -1451,7 +1451,7 @@ input::placeholder {
 .required-label {
   color: #626b78;
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.875rem;
   float: right;
 }
 .amount-input {
@@ -1464,11 +1464,11 @@ input::placeholder {
   margin-top: 3px;
 }
 .amount-input > span {
-  font-size: 29px;
+  font-size: 1.8125rem;
   color: #69727f;
 }
 .amount-input input:not([type]) {
-  font-size: 36px;
+  font-size: 2.25rem;
   padding: 9px 0;
   min-width: 0;
   border: 0;
@@ -1500,7 +1500,7 @@ input::placeholder {
   border-radius: 6px;
   color: #626b78;
   background: #fff;
-  font-size: 12px;
+  font-size: 0.875rem;
   min-height: 36px;
 }
 .amount-presets button:hover:not(:disabled),
@@ -1514,7 +1514,7 @@ input::placeholder {
 }
 .field-error {
   color: var(--error);
-  font-size: 12px;
+  font-size: 0.875rem;
   display: flex;
   align-items: flex-start;
   gap: 6px;
@@ -1526,7 +1526,7 @@ input::placeholder {
 .optional {
   font-weight: 400;
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
   margin-left: 7px;
 }
 .note-field .field-hint {
@@ -1549,11 +1549,11 @@ input::placeholder {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #626b78;
 }
 .cost-summary strong {
-  font-size: 13px;
+  font-size: 0.875rem;
   color: #555e6c;
 }
 .cost-summary > div:last-child span {
@@ -1562,11 +1562,11 @@ input::placeholder {
 }
 .cost-summary > div:last-child strong {
   color: #353e4b;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .footer-security {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
   display: flex;
   gap: 7px;
   align-items: center;
@@ -1585,15 +1585,15 @@ input::placeholder {
 }
 .review-recipient div > span {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .review-recipient h3 {
-  font-size: 15px;
+  font-size: 0.9375rem;
   margin: 4px 0;
 }
 .review-recipient p {
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .review-recipient > a {
   margin-left: auto;
@@ -1606,7 +1606,7 @@ input::placeholder {
   justify-content: space-between;
   gap: 18px;
   margin: 18px 0;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .summary-details dt {
   color: #626b78;
@@ -1622,13 +1622,13 @@ input::placeholder {
 }
 .summary-details dd small {
   display: block;
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #626b78;
   margin-top: 5px;
 }
 .summary-details dd .text-link {
   margin-left: 13px;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .summary-details > .summary-total {
   padding-top: 22px;
@@ -1638,20 +1638,20 @@ input::placeholder {
 .summary-total dt {
   color: #3c4552;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .summary-total dd {
-  font-size: 26px;
+  font-size: 1.625rem;
   color: #c9001b;
   font-weight: 650;
   letter-spacing: -0.5px;
 }
 .summary-details > .summary-remaining {
   margin-top: -5px;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .summary-remaining dd {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #687483;
 }
 .processing-panel {
@@ -1662,12 +1662,12 @@ input::placeholder {
 }
 .processing-panel h2 {
   margin: 25px 0 14px;
-  font-size: 24px;
+  font-size: 1.5rem;
   letter-spacing: -0.5px;
 }
 .processing-panel p {
   color: #626b78;
-  font-size: 13px;
+  font-size: 0.875rem;
   line-height: 1.8;
   max-width: 420px;
   margin: auto;
@@ -1699,7 +1699,7 @@ input::placeholder {
   padding-top: 22px;
   margin-top: 45px;
   color: #626b78;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .processing-actions {
   display: flex;
@@ -1745,20 +1745,20 @@ input::placeholder {
   display: block;
   margin: 19px 0 11px;
   color: #626b78;
-  font-size: 10px;
+  font-size: 0.875rem;
 }
 .receipt-header h1 {
-  font-size: 27px;
+  font-size: 1.6875rem;
   letter-spacing: -0.6px;
   line-height: 1.3;
 }
 .receipt-header p {
   color: #626b78;
-  font-size: 12px;
+  font-size: 0.875rem;
   margin-top: 11px;
 }
 .receipt-amount {
-  font-size: 38px;
+  font-size: 2.375rem;
   letter-spacing: -1px;
   font-weight: 650;
   margin: 21px 0 7px;
@@ -1771,7 +1771,7 @@ input::placeholder {
   background: #edf7f0;
   padding: 4px 9px;
   border-radius: 20px;
-  font-size: 10px;
+  font-size: 0.875rem;
 }
 .success-pill > span {
   width: 5px;
@@ -1784,22 +1784,22 @@ input::placeholder {
   padding: 7px 30px 0;
 }
 .receipt-details .summary-total dd {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #333f4a;
 }
 .receipt-details > div {
-  font-size: 12px;
+  font-size: 0.875rem;
   margin: 19px 0;
 }
 .operation-id {
   font-family: Consolas, monospace;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .receipt-actions {
   padding: 0 30px 18px;
 }
 .download-status {
-  font-size: 10px;
+  font-size: 0.875rem;
   text-align: center;
   color: #626b78;
   margin-top: 10px;
@@ -1815,7 +1815,7 @@ input::placeholder {
 
 @media (min-width: 1550px) {
   :root {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .page {
     padding-top: 42px;
@@ -1831,7 +1831,7 @@ input::placeholder {
     padding: 25px 32px;
   }
   .balance {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
   .account-bottom {
     margin-top: 30px;
@@ -1852,7 +1852,7 @@ input::placeholder {
   .nav-item {
     padding-left: 11px;
     padding-right: 10px;
-    font-size: 13px;
+    font-size: 0.875rem;
     gap: 9px;
   }
   .nav-item.is-active::before {
@@ -1889,7 +1889,7 @@ input::placeholder {
     padding: 20px;
   }
   .flow-panel-heading h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
   .form-footer {
     flex-wrap: wrap;
@@ -1947,10 +1947,10 @@ input::placeholder {
   .wordmark span {
     margin-left: 18px;
     padding-left: 18px;
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .academic-label {
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .overview-grid {
     gap: 16px;
@@ -1983,7 +1983,7 @@ input::placeholder {
     height: 31px;
   }
   .transaction-copy span {
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .recipient-option {
     padding: 13px;
@@ -1992,7 +1992,7 @@ input::placeholder {
   .recipient-option .avatar {
     width: 37px;
     height: 37px;
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .step-indicator {
     padding: 18px;
@@ -2003,7 +2003,7 @@ input::placeholder {
 }
 @media (max-width: 760px) {
   .wordmark {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
   .wordmark span {
     display: none;
@@ -2024,7 +2024,7 @@ input::placeholder {
     padding: 25px 23px;
   }
   .page h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .overview-grid {
     grid-template-columns: 1fr;
@@ -2042,11 +2042,11 @@ input::placeholder {
     margin-bottom: 12px;
   }
   .quick-transfer-card h2 {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
   .quick-transfer-card p {
     grid-column: 1;
-    font-size: 12px;
+    font-size: 0.875rem;
     margin-bottom: 0;
   }
   .quick-transfer-card .button {
@@ -2079,28 +2079,28 @@ input::placeholder {
     display: none;
   }
   .shortcut strong {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .panel-intro {
     padding-left: 18px;
   }
   .panel-heading h2 {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .transaction-copy strong,
   .transaction-value strong {
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .transaction-copy span,
   .transaction-value time {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .page-footer {
     padding: 10px 23px 20px;
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .transfer-banner {
     padding: 28px;
@@ -2125,7 +2125,7 @@ input::placeholder {
     display: none;
   }
   .step-indicator li {
-    font-size: 11px;
+    font-size: 0.875rem;
     gap: 7px;
   }
   .step-indicator li::after {
@@ -2156,16 +2156,16 @@ input::placeholder {
     gap: 5px;
   }
   .wordmark {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.2;
   }
   .header-right {
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .academic-label {
     border: 0;
     padding: 0;
-    font-size: 10px;
+    font-size: 0.875rem;
     letter-spacing: 0.2px;
   }
   .app-shell {
@@ -2201,7 +2201,7 @@ input::placeholder {
     min-height: 0;
     padding: 6px 4px;
     flex: 1;
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .nav-item > span {
     display: block;
@@ -2241,10 +2241,10 @@ input::placeholder {
   .profile-avatar {
     width: 32px;
     height: 32px;
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .breadcrumb {
-    font-size: 11px;
+    font-size: 0.875rem;
     gap: 9px;
   }
   .page {
@@ -2254,13 +2254,13 @@ input::placeholder {
     margin-bottom: 22px;
   }
   .eyebrow {
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .page h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .page-heading p {
-    font-size: 13px;
+    font-size: 0.875rem;
     max-width: 300px;
   }
   .overview-grid {
@@ -2271,7 +2271,7 @@ input::placeholder {
     min-height: 249px;
   }
   .balance {
-    font-size: 39px;
+    font-size: 2.4375rem;
   }
   .quick-transfer-card {
     padding: 21px;
@@ -2281,17 +2281,17 @@ input::placeholder {
     margin-bottom: 14px;
   }
   .quick-transfer-card h2 {
-    font-size: 23px;
+    font-size: 1.4375rem;
   }
   .quick-transfer-card p {
     margin: 10px 0 18px;
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .quick-transfer-card .button {
     width: 100%;
   }
   .button {
-    font-size: 13px;
+    font-size: 0.875rem;
     min-height: 46px;
   }
   .shortcut-grid {
@@ -2301,13 +2301,13 @@ input::placeholder {
     border-radius: 9px;
   }
   .shortcut strong {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .section-heading {
     margin-top: 26px;
   }
   .section-heading h2 {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .section-heading > span {
     display: none;
@@ -2320,10 +2320,10 @@ input::placeholder {
     padding: 20px 17px 11px;
   }
   .panel-heading h2 {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .text-link {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .transaction-list {
     padding: 0 17px;
@@ -2333,11 +2333,11 @@ input::placeholder {
   }
   .transaction-copy strong,
   .transaction-value strong {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .transaction-copy span,
   .transaction-value time {
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .transaction-icon {
     width: 32px;
@@ -2354,14 +2354,14 @@ input::placeholder {
     padding: 11px 0;
   }
   .favorite-row strong {
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .favorite-row small {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .favorites-panel > .button {
     min-height: 43px;
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .trust-strip {
     padding: 16px;
@@ -2369,7 +2369,7 @@ input::placeholder {
     align-items: flex-start;
   }
   .trust-strip div span {
-    font-size: 11px;
+    font-size: 0.875rem;
     line-height: 1.7;
   }
   .page-footer {
@@ -2379,7 +2379,7 @@ input::placeholder {
     padding: 24px;
   }
   .transfer-banner h2 {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
   .recipient-tiles {
     grid-template-columns: 1fr;
@@ -2395,14 +2395,14 @@ input::placeholder {
     grid-row: 1 / 3;
     width: 41px;
     height: 41px;
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .recipient-tile > strong {
     margin-top: 0;
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .recipient-tile > span:not(.avatar):not(.text-link) {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .recipient-tile .text-link {
     grid-column: 2;
@@ -2410,7 +2410,7 @@ input::placeholder {
     margin-top: 1px;
   }
   .transfer-page .flow-title h1 {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
   .back-link {
     margin-bottom: 13px;
@@ -2424,7 +2424,7 @@ input::placeholder {
     flex: 1 !important;
     gap: 7px;
     flex-direction: column;
-    font-size: 10px;
+    font-size: 0.875rem;
   }
   .step-indicator li::after {
     display: none;
@@ -2437,20 +2437,20 @@ input::placeholder {
     padding: 22px 17px;
   }
   .flow-panel-heading h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
   .flow-panel-heading p {
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .recipient-option {
     padding: 13px 11px;
     gap: 10px;
   }
   .recipient-option-text > strong {
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .recipient-option-text > span {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .recipient-option .avatar {
     width: 36px;
@@ -2458,14 +2458,14 @@ input::placeholder {
   }
   .field label,
   .search-field label {
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   input:not([type='radio']):not([type='checkbox']),
   select {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .input-wrap input:not([type]) {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .form-footer {
     flex-direction: column;
@@ -2478,10 +2478,10 @@ input::placeholder {
     width: 100%;
   }
   .selection-hint {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .amount-input input:not([type]) {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
   .amount-presets {
     gap: 8px;
@@ -2499,19 +2499,19 @@ input::placeholder {
   .review-recipient .avatar {
     width: 38px;
     height: 38px;
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .review-recipient h3 {
-    font-size: 13px;
+    font-size: 0.875rem;
   }
   .review-recipient > .text-link {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .summary-details > div {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .summary-total dd {
-    font-size: 23px;
+    font-size: 1.4375rem;
   }
   .review-footer {
     flex-direction: column-reverse;
@@ -2521,7 +2521,7 @@ input::placeholder {
     padding: 35px 20px 20px;
   }
   .processing-panel h2 {
-    font-size: 23px;
+    font-size: 1.4375rem;
   }
   .processing-actions {
     flex-direction: column;
@@ -2539,13 +2539,13 @@ input::placeholder {
     padding: 28px 18px 25px;
   }
   .receipt-header h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   .receipt-details {
     padding: 7px 19px 0;
   }
   .receipt-details > div {
-    font-size: 11px;
+    font-size: 0.875rem;
     gap: 12px;
   }
   .receipt-actions {

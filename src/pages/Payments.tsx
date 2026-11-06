@@ -38,9 +38,12 @@ export function Payments() {
 
 
 
+      <label className="payment-search-label" htmlFor="payment-search">Buscar empresa o servicio</label>
       <div className="search-container" style={{ position: 'relative', marginBottom: '2rem' }}>
         <Icon name="search" size={20} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
         <input
+          id="payment-search"
+          aria-describedby="payment-search-results"
           type="search"
           className="text-input"
           style={{ width: '100%', paddingLeft: '3rem', height: '3.5rem', fontSize: '1rem', borderRadius: '12px', border: '1px solid #cbd5e1' }}
@@ -51,6 +54,7 @@ export function Payments() {
       </div>
 
       <div className="services-list">
+        <p id="payment-search-results" role="status">{filtered.length} {filtered.length === 1 ? 'servicio encontrado' : 'servicios encontrados'}</p>
         <h2 style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
           {query ? 'Resultados de búsqueda' : 'Servicios frecuentes'}
         </h2>

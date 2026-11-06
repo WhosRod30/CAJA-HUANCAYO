@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { usePayment } from './paymentContext';
 import { useBanking } from '../../app/bankingContext';
 import { money, amountError } from '../../utils/format';
@@ -19,7 +19,7 @@ export function PaymentReviewStep() {
     <div>
 
 
-      <h2 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', textAlign: 'center' }}>Revisa tu pago</h2>
+      <h2 data-step-heading style={{ fontSize: '1.2rem', marginBottom: '1.5rem', textAlign: 'center' }}>Revisa tu pago</h2>
 
       <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
@@ -41,6 +41,7 @@ export function PaymentReviewStep() {
         </div>
       </div>
 
+      <div className="payment-edit-actions"><Link className="button secondary" to="/pagos/detalle">Editar suministro</Link>{draft.service?.requiresAmount && <Link className="button secondary" to="/pagos/monto">Editar monto</Link>}</div>
       <p className="field-error" role="alert">{validation}</p>
       <p className="field-hint" style={{ marginBottom: '1rem' }}>Saldo disponible: {money(account.balance)}</p>
       <button

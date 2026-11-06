@@ -19,7 +19,7 @@ export function PaymentReceiptStep() {
       <div style={{ width: '64px', height: '64px', background: '#10b981', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
         <Icon name="check" size={32} />
       </div>
-      <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0f172a' }}>¡Pago Exitoso!</h2>
+      <h2 data-step-heading style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0f172a' }}>¡Pago Exitoso!</h2>
       <p style={{ color: '#64748b', marginBottom: '2rem' }}>Tu pago se ha procesado correctamente.</p>
 
       <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', textAlign: 'left' }}>

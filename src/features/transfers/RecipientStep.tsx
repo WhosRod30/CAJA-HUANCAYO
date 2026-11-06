@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBanking } from '../../app/bankingContext'
 import { demoRecipients } from '../../mocks/recipients'
@@ -12,6 +12,9 @@ export function RecipientStep() {
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [showAll, setShowAll] = useState(false)
+  const [selectionError, setSelectionError] = useState('')
+  const recipientsFieldset = useRef<HTMLFieldSetElement>(null)
+  const searchInput = useRef<HTMLInputElement>(null)
   const normalized = normalize(query)
   const numberQuery = query.replace(/[\s-]/g, '')
   const results = demoRecipients.filter((r) =>
@@ -21,6 +24,19 @@ export function RecipientStep() {
           (r.account.includes(numberQuery) || r.phone.includes(numberQuery)))
       : showAll || bank.favorites.includes(r.id),
   )
+  const isNewAccount = /^\d+$/.test(numberQuery) && numberQuery.length >= 10
+  if (isNewAccount) {
+    results.unshift({
+      id: 'new-' + numberQuery,
+      name: 'Juan Perez (Validado)',
+      account: numberQuery,
+      bank: 'Caja Huancayo',
+      own: false,
+      phone: '',
+      initials: 'JP',
+      color: 'indigo',
+    })
+  }
   return (
     <TransferFrame
       step={1}
@@ -32,6 +48,12 @@ export function RecipientStep() {
         onSubmit={(e) => {
           e.preventDefault()
           if (bank.draft.recipient) navigate('/transferencias/monto')
+          else {
+            setSelectionError('Selecciona a quién enviarás el dinero antes de continuar. Usa las flechas o Espacio sobre un destinatario.')
+            const firstRecipient = recipientsFieldset.current?.querySelector<HTMLInputElement>('input[type="radio"]')
+            const target = firstRecipient ?? searchInput.current
+            target?.focus()
+          }
         }}
       >
         <div className="field">
@@ -42,9 +64,15 @@ export function RecipientStep() {
             <Icon name="search" />
             <input
               id="recipient-search"
+              ref={searchInput}
               autoComplete="off"
+              maxLength={20}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value
+                if (/^\d*$/.test(value) && value.length > 20) return
+                setQuery(value)
+              }}
               placeholder="Por ejemplo, María Torres"
               aria-describedby="recipient-hint"
             />
@@ -86,7 +114,7 @@ export function RecipientStep() {
           {results.length} destinatarios disponibles
         </div>
         {results.length ? (
-          <fieldset className="recipient-options">
+          <fieldset className="recipient-options" ref={recipientsFieldset} aria-describedby="recipient-selection-error">
             <legend className="sr-only">Selecciona un destinatario</legend>
             {results.map((recipient) => (
               <label
@@ -99,7 +127,7 @@ export function RecipientStep() {
                   name="recipient"
                   value={recipient.id}
                   checked={bank.draft.recipient?.id === recipient.id}
-                  onChange={() => bank.selectRecipient(recipient)}
+                  onChange={() => { bank.selectRecipient(recipient); setSelectionError('') }}
                 />
                 <RecipientAvatar recipient={recipient} />
                 <span className="recipient-option-text">
@@ -147,6 +175,7 @@ export function RecipientStep() {
             </button>
           </div>
         )}
+        <p id="recipient-selection-error" className="field-error" role="alert">{selectionError}</p>
         <div className="form-footer">
           <p className="selection-hint" aria-live="polite">
             {bank.draft.recipient ? (
@@ -157,7 +186,7 @@ export function RecipientStep() {
               'Selecciona un destinatario para continuar.'
             )}
           </p>
-          <button className="button primary" disabled={!bank.draft.recipient}>
+          <button className="button primary" type="submit">
             Continuar <Icon name="arrow" size={18} />
           </button>
         </div>

@@ -1,15 +1,19 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { usePayment } from './paymentContext';
 
 export function PaymentDetailStep() {
   const { draft, updateDraft } = usePayment();
   const [supply, setSupply] = useState(draft.supplyNumber);
+  const [touched, setTouched] = useState(false);
+  const input = useRef<HTMLInputElement>(null);
+  const valid = /^\d{5,20}$/.test(supply.trim());
   const navigate = useNavigate();
 
   const handleNext = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!/^\d{5,20}$/.test(supply.trim())) return;
+    setTouched(true);
+    if (!valid) { input.current?.focus(); return; }
     updateDraft({ supplyNumber: supply.trim() });
     if (draft.service?.requiresAmount) {
       navigate('/pagos/monto');
@@ -21,11 +25,11 @@ export function PaymentDetailStep() {
   };
 
   return (
-    <form onSubmit={handleNext}>
+    <form noValidate onSubmit={handleNext}>
 
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{draft.service?.name}</h2>
+        <h2 data-step-heading style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{draft.service?.name}</h2>
         <p style={{ color: '#64748b' }}>Ingresa el número de suministro o identificador para consultar la deuda.</p>
       </div>
 
@@ -34,24 +38,28 @@ export function PaymentDetailStep() {
           Número de Suministro / DNI
         </label>
         <input
+          ref={input}
           id="supplyNumber"
           type="text"
           inputMode="numeric"
           maxLength={20}
+          aria-invalid={touched && !valid}
+          aria-describedby="supply-hint supply-error"
+          required
           className="text-input"
           style={{ width: '100%', padding: '0.75rem', fontSize: '1rem', borderRadius: '8px', border: '1px solid #cbd5e1' }}
           value={supply}
-          onChange={(e) => setSupply(e.target.value)}
+          onChange={(e) => { setSupply(e.target.value); setTouched(true); }}
+          onBlur={() => setTouched(true)}
           placeholder="Ej: 12345678"
-          autoFocus
         />
+        <p id="supply-hint" className="field-hint">Obligatorio. Escribe entre 5 y 20 números, sin letras ni espacios.</p>
+        <p id="supply-error" className="field-error" aria-live="polite">{touched && !valid ? 'No podemos continuar: el suministro debe tener de 5 a 20 dígitos. Revisa el número de tu recibo y vuelve a intentarlo.' : ''}</p>
       </div>
 
       <button
         type="submit"
         className="button primary full-width"
-        disabled={!/^\d{5,20}$/.test(supply.trim())}
-        style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: 'none', background: '#e11d48', color: 'white', fontSize: '1rem', fontWeight: 600, cursor: supply.length >= 5 ? 'pointer' : 'not-allowed', opacity: supply.length >= 5 ? 1 : 0.5 }}
       >
         Continuar
       </button>

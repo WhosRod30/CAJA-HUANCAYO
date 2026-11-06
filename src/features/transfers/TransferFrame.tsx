@@ -77,14 +77,14 @@ export function TransferFrame({
       </Link>
       <div className="flow-title">
         <div className="eyebrow">NUEVA TRANSFERENCIA</div>
-        <h1>Un paso más cerca.</h1>
+        <h1>Transferir dinero</h1>
       </div>
       <Steps active={step} />
       <div className="flow-grid">
         <section className="panel flow-panel">
           <div className="flow-panel-heading">
             <span className="step-caption">PASO {step} DE 4</span>
-            <h2>{title}</h2>
+            <h2 data-step-heading>{title}</h2>
             <p>{description}</p>
           </div>
           {children}

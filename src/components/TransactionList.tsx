@@ -27,6 +27,7 @@ export function TransactionList({
             <span>{transaction.detail}</span>
           </div>
           <div className="transaction-value">
+            <span className="transaction-direction">{transaction.kind === 'incoming' ? 'Ingreso' : 'Salida'}</span>
             <strong
               className={transaction.kind === 'incoming' ? 'positive' : ''}
             >

@@ -23,6 +23,7 @@ export function AmountStep() {
           e.preventDefault()
           setTouched(true)
           if (!error) navigate('/transferencias/revisar')
+          else document.getElementById('transfer-amount')?.focus()
         }}
       >
         <div className="field amount-field">
@@ -110,7 +111,7 @@ export function AmountStep() {
           <span className="footer-security">
             <Icon name="shield" size={16} /> Revisarás todo antes de confirmar
           </span>
-          <button className="button primary" disabled={!!error}>
+          <button className="button primary">
             Revisar transferencia <Icon name="arrow" size={18} />
           </button>
         </div>

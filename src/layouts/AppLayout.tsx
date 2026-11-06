@@ -10,6 +10,7 @@ const navigation: { to: string; name: string; icon: IconName }[] = [
   { to: '/pagos', name: 'Pagos', icon: 'receipt' },
   { to: '/movimientos', name: 'Mis movimientos', icon: 'history' },
   { to: '/destinatarios', name: 'Destinatarios', icon: 'users' },
+  { to: '/ayuda', name: 'Centro de ayuda', icon: 'help' },
 ]
 
 export function AppLayout() {
@@ -19,8 +20,17 @@ export function AppLayout() {
     navigation.find((item) => pathname.startsWith(item.to))?.name ?? 'Ayuda'
 
   useEffect(() => {
-    document.title = `${section} | Caja Huancayo`
-    document.getElementById('main-content')?.focus({ preventScroll: true })
+    const stepTitle: Record<string, string> = {
+      '/transferencias/destinatario': 'Elegir destinatario', '/transferencias/monto': 'Monto de la transferencia', '/transferencias/revisar': 'Revisar transferencia', '/transferencias/procesando': 'Estado de la transferencia',
+      '/pagos/detalle': 'Suministro del servicio', '/pagos/monto': 'Monto del pago', '/pagos/revisar': 'Revisar pago', '/pagos/procesando': 'Estado del pago', '/pagos/comprobante': 'Comprobante del pago',
+    }
+    const title = pathname.startsWith('/transferencias/comprobante/') ? 'Comprobante de transferencia' : stepTitle[pathname] ?? section
+    document.title = `${title} | Caja Huancayo`
+    const main = document.getElementById('main-content')
+    const heading = main?.querySelector<HTMLElement>('[data-step-heading]') ?? main?.querySelector<HTMLElement>('h1')
+    const target = heading ?? main
+    target?.setAttribute('tabindex', '-1')
+    target?.focus({ preventScroll: true })
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname, section])
 
@@ -33,7 +43,6 @@ export function AppLayout() {
         <NavLink
           className="wordmark"
           to="/inicio"
-          aria-label="Caja Huancayo, página principal"
         >
           Caja Huancayo<span>CAJA VIRTUAL</span>
         </NavLink>
@@ -73,17 +82,6 @@ export function AppLayout() {
                 Revisa siempre el destinatario y el monto antes de confirmar.
               </p>
             </div>
-            <NavLink
-              to="/ayuda"
-              aria-label="Centro de ayuda"
-              title="Centro de ayuda"
-              className={({ isActive }) =>
-                `nav-item ${isActive ? 'is-active' : ''}`
-              }
-            >
-              <Icon name="help" />
-              <span>Centro de ayuda</span>
-            </NavLink>
             <div className="sidebar-footer">Siempre cerca de ti.</div>
           </div>
         </aside>
@@ -108,6 +106,7 @@ export function AppLayout() {
           </main>
           <footer className="page-footer">
             <span>© Caja Huancayo</span>
+            <NavLink to="/accesibilidad">Accesibilidad</NavLink>
           </footer>
         </div>
       </div>

@@ -34,16 +34,21 @@ import { MobileTransfers } from './pages/mobile/MobileTransfers'
 import { MobileLoans } from './pages/mobile/MobileLoans'
 
 import './App.css'
+import { AccessibilityTools } from './components/AccessibilityTools'
+import { Accessibility } from './pages/Accessibility'
+import './components/accessibility.css'
 
 function App() {
   return (
     <BrowserRouter>
+      <AccessibilityTools />
       <WebSessionProvider><BankingProvider>
         <PaymentProvider webPayments>
           <Routes>
           <Route path="/" element={<Navigate to="/inicio" replace />} />
           <Route path="inicio" element={<HomePage />} />
           <Route path="login" element={<WebLogin />} />
+          <Route path="accesibilidad" element={<Accessibility />} />
           
           {/* RUTAS MOBILE (EXCLUSIVO PARA REDISEÑO MOBILE APF2) */}
           <Route path="mobile" element={<MobileLayout />}>

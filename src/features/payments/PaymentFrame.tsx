@@ -15,7 +15,7 @@ export function PaymentFrame({ children, step }: { children: ReactNode; step: nu
   if (step === 4 && status === 'idle') return <Navigate to="/pagos/revisar" replace />;
   if (step === 5 && (status !== 'success' || !receipt)) return <Navigate to={status === 'error' ? '/pagos/procesando' : '/pagos/revisar'} replace />;
   return (
-    <div className="flow-frame" style={{ maxWidth: '480px', margin: '0 auto', background: 'white', minHeight: '100vh' }}>
+    <div className="payment-flow">
       <header className="flow-header" style={{ display: 'flex', alignItems: 'center', padding: '1rem', borderBottom: '1px solid #e2e8f0' }}>
         {status !== 'success' && status !== 'pending' && (
           <Link to={step === 1 ? '/pagos' : step === 2 || !draft.service.requiresAmount ? '/pagos/detalle' : '/pagos/monto'} className="icon-button" aria-label="Volver">
@@ -26,18 +26,14 @@ export function PaymentFrame({ children, step }: { children: ReactNode; step: nu
         {status !== 'success' && status !== 'pending' && <div style={{ width: 44 }}></div>}
       </header>
 
-      {status !== 'success' && status !== 'pending' && (
-        <div className="progress-bar" style={{ height: '4px', background: '#f1f5f9', width: '100%' }}>
-          <div
-            className="progress-fill"
-            style={{ height: '100%', background: '#e11d48', width: `${(Math.min(step, 3) / 3) * 100}%`, transition: 'width 0.3s ease' }}
-          />
-        </div>
-      )}
+      <ol className="step-indicator" aria-label="Progreso del pago">{(draft.service.requiresAmount ? ['Suministro', 'Monto', 'Revisión', 'Comprobante'] : ['Suministro', 'Revisión', 'Comprobante']).map((label, index) => {
+        const active = step === 1 ? 'Suministro' : step === 2 ? 'Monto' : step < 5 ? 'Revisión' : 'Comprobante';
+        return <li key={label} className={label === active ? 'current' : ''} aria-current={label === active ? 'step' : undefined}><span className="step-number" aria-hidden="true">{index + 1}</span><span>{label}</span></li>;
+      })}</ol>
 
-      <main style={{ padding: '1.5rem' }}>
+      <section aria-label="Datos del pago">
         {children}
-      </main>
+      </section>
     </div>
   );
 }
